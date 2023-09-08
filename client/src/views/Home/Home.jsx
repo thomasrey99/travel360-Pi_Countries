@@ -16,6 +16,7 @@ export const Home=()=>{
             <h2 className="home-title">Destinos turisticos</h2>
             <Searchbar/>
             <FilterOrder activities={allActivities}/>
+            <Paginate/>
             {
             allCountries
             ?

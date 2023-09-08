@@ -35,7 +35,7 @@
 }
 
 .card-body h2{
-    color: #383CD6;
+    color: black;
     font-size: 16px;
 }
 .card-body p{
@@ -46,9 +46,9 @@
 
 .link-detail{
     text-decoration: none;
-    padding: 8px;
-    background: #00BDD6;
-    font-size: 16px;
+    padding: 5px;
+    background: black;
+    font-size: 12px;
     color: white;
     border-radius: 20px;
 }

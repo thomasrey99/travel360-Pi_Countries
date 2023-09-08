@@ -16,6 +16,8 @@ const FormActivity=()=>{
     idCountries: [],
   });
 
+  const [dataCreated, setDataCreated]=useState({})
+
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
@@ -29,6 +31,7 @@ const FormActivity=()=>{
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setDataCreated(data)
     dispatch(postActivity(data));
     setData({
       name: "",
@@ -40,7 +43,7 @@ const FormActivity=()=>{
   };
 
   const handleChangeCountries = async (event) => {
-    const { value, name } = event.target;
+    const {value} = event.target;
     const selectedOptions = [...data.idCountries];
     if (!selectedOptions.includes(value)) {
       const addCountryId = [...selectedOptions, value];
@@ -58,16 +61,38 @@ const FormActivity=()=>{
       });
     }
   };
-
+  const close=()=>{
+    setDataCreated({})
+  }
   useEffect(() => {
     const validationErrors = validations(data);
     setErrors(validationErrors);
   }, [data]);
     return (
         <main className="main-form">
-            <h2>Crear actividad</h2>
+            <div className="section-left">
+              <h2 className="title-make">Crear actividad</h2>
+              {
+                Object.keys(dataCreated).length!==0
+                ?
+                <div className="alert">
+                  <h3>
+                    {message ==="Actividad creada con exito" ?(<span className="succes">{message}! <span class="material-symbols-outlined">check_circle</span></span>): message==="La actividad ya existe" ? (<span className="exist">{message}! <span class="material-symbols-outlined">cancel</span></span>):""}
+                  </h3>
+                  <p>Actividad: {dataCreated.name}</p>
+                  <p>Temporada: {dataCreated.season}</p>
+                  <p>Duracion: {dataCreated.duration} hs</p>
+                  <p>Dificultad: {
+                    dataCreated.dificulty==="1"?"Facil" : dataCreated.dificulty==="2"?"Moderado":dataCreated.dificulty==="3"?"Intermedio":dataCreated.dificulty==="4"?"Avanzado":dataCreated.dificulty==="5"?"Extremo":""
+                  }</p>
+                  <div className="close" onClick={close}><span>x</span></div>
+                </div>
+                :
+                ""
+              }
+            </div>
             <form className="form-cont" onSubmit={handleSubmit}>
-                <label htmlFor="name">Actividad</label>
+                <label htmlFor="name" className="label-desc">Actividad</label>
                 <input name="name" className="input" value={data.name} onChange={handleChange}/>
                 {
                     errors.longName
@@ -83,7 +108,7 @@ const FormActivity=()=>{
                     (<label htmlFor="name" className="error">{errors.invalidName}</label>)
                     :" "
                 }
-                <label htmlFor="duration">Duracion (hs)</label>
+                <label htmlFor="duration" className="label-desc">Duracion (hs)</label>
                 <input type="number" name="duration" className="input" value={data.duration} onChange={handleChange}/>
                 {
                     errors.emptyDuration
@@ -91,7 +116,7 @@ const FormActivity=()=>{
                     (<label htmlFor="duration" className="error">{errors.emptyDuration}</label>)
                     :" "
                 }
-                <label htmlFor="dificulty">Dificultad</label>
+                <label htmlFor="dificulty" className="label-desc">Dificultad</label>
                 <select name="dificulty" className="input" value={data.dificulty} onChange={handleChange}>
                     <option disabled selected>Seleccionar</option>
                     <option value={1} >Facil</option>
@@ -106,7 +131,7 @@ const FormActivity=()=>{
                     (<label htmlFor="dificulty" className="error">{errors.emptyDificulty}</label>)
                     : " "
                 }
-                <label htmlFor="season">Temporada</label>
+                <label htmlFor="season" className="label-desc">Temporada</label>
                 <select name="season" className="input" value={data.season} onChange={handleChange}>
                     <option disabled value="">Seleccionar</option>
                     <option value="Verano">Verano</option>
@@ -120,8 +145,8 @@ const FormActivity=()=>{
                     (<label htmlFor="season" className="error">{errors.emptySeason}</label>)
                     : " "
                 }
-                <label htmlFor="idCountries">Paises</label>
-                <select name="idCountries" multiple value={data.idCountries} onChange={handleChangeCountries}>
+                <label htmlFor="idCountries" className="label-desc">Paises</label>
+                <select name="idCountries" multiple value={data.idCountries} onChange={handleChangeCountries} className="input-country">
 
                     {
                         countries.map(({id, name}, index)=>{
@@ -138,18 +163,8 @@ const FormActivity=()=>{
                     :
                     " "
                 }
-                <button type="submit" disabled={Object.keys(errors).length!==0}>Crear</button>
+                <button type="submit" disabled={Object.keys(errors).length!==0} id={Object.keys(errors).length!==0 ? "disabled": ""}>Crear</button>
             </form>
-            {
-                message && message==="Actividad creada con exito"
-                ?
-                <p className="success" id="created">{message} <span class="material-symbols-outlined">check_circle</span></p>
-                :
-                message && message==="La actividad ya existe"
-                ?
-                <p className="error" id="exist">{message} <span class="material-symbols-outlined">cancel</span></p>
-                :" "
-            }
         </main>
     )
 }

@@ -6,4 +6,17 @@
   
 body{
   background-color: white;
+
+}
+
+body::-webkit-scrollbar {
+  width: 0.6vw;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #8C969C;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
 }

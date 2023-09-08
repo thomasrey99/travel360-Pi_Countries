@@ -6,7 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: black;
+    background: url("../../assets/img/O9FG4R0.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: apearence 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 }
 .logo-title{
     font-family: 'Pacifico', cursive;
@@ -57,12 +64,12 @@
     margin: 10px;
     text-decoration: none;
     height: 10px;
-    background-color: #D65185;
+    background-color: black;
     border-radius: 20px;
     color: white;
     animation-duration: 2s;
-}
-
-.enter:hover{
-    box-shadow: 0 0 10px #d65185
+    opacity: 0;
+    animation: apearence 3s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 }

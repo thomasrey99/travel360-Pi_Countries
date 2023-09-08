@@ -1,0 +1,44 @@
+const {DataTypes}=require("sequelize")
+module.exports=(dataBase)=>{
+    dataBase.define("Country",{
+        id:{
+            type:DataTypes.STRING(3),
+            primaryKey:true,
+            allowNull:false
+        },
+        name:{
+            type:DataTypes.STRING,
+            allowNull:false,
+            unique:true
+        },
+        flag:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        continent:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        capital:{
+            type:DataTypes.STRING
+        },
+        subregion:{
+            type:DataTypes.STRING
+        },
+        area:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+        },
+        population:{
+            type:DataTypes.INTEGER,
+            allowNull:true
+        }
+    },
+    {
+        freezeTableName: true,
+        timestamps: false,
+        createdAt:false,
+        updatedAt:false
+    }
+    )
+}

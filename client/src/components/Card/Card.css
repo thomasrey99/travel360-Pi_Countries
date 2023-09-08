@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.card-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    width: 200px;
+    padding: 15px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    background: transparent;
+    border: 1px solid #DEDEDE;
+    transition: 0.5s;
+    font-family: 'Montserrat', sans-serif;
+}
+.card-cont:hover{
+    transform: scale(1.05);
+}
+
+
+.card-cont img{
+    width: 95%;
+    height: 130px;
+    border: 1px solid #DEDEDE;
+}
+.card-body{
+    width: 95%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-body h2{
+    color: #383CD6;
+    font-size: 16px;
+}
+.card-body p{
+    color: #D65185;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.link-detail{
+    text-decoration: none;
+    padding: 8px;
+    background: #00BDD6;
+    font-size: 16px;
+    color: white;
+    border-radius: 20px;
+}

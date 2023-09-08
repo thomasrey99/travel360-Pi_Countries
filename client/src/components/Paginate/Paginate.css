@@ -1,0 +1,16 @@
+.paginate{
+    list-style: none;
+    display:flex ;
+    padding: 20px;
+}
+.paginate li{
+    margin: 10px;
+    cursor: pointer;
+    width: 20px;
+    color: #00BDD6;
+    text-align: center
+}
+
+.page{
+    background-color: red;
+}

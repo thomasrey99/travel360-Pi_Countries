@@ -1,0 +1,23 @@
+.loader-cont{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loader{
+    width: 200px;
+    height: 200px;
+    border-bottom: 3px solid  #D65186;
+    border-left: 3px solid  #D65186;
+    border-right: 3px solid  #D65186;
+    border-radius: 50%;
+    animation: loader 4s linear infinite;
+}
+
+@keyframes loader{
+    100%{
+        transform: rotate(360deg);
+    }
+}

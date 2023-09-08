@@ -1,0 +1,29 @@
+.main-detail{
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: apearence 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    background: #D65185;
+}
+.link-back{
+    text-decoration: none;
+    width: 90px;
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    background: #383CD6;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 0 5px  #383CD6;
+}
+#back-icon{
+    text-align: center;
+    font-size: 20px !important;
+}

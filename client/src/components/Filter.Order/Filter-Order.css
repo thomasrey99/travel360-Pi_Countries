@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+.section-allCountries{
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-filter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 500px;
+}
+.all-button{
+    position: relative;
+    width: 150px;
+    margin: 10px;
+    border-radius: 20px;
+    background: white;
+    padding: 5px;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+    border: 1px solid #dedede;
+    cursor: pointer;
+}
+.select-cont{
+    position: relative;
+    width: 150px;
+    margin: 10px;
+}
+.select-cont select{
+    position: relative;
+    padding: 5px; 
+    width: 100%;
+    border-radius: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bolder;
+    background: white;
+    color: black;
+    border:1px solid #dedede;
+    text-align: center;
+}
+.select-cont select::-ms-expand{
+    display: none;
+}
+.select-cont select::focus{
+    outline: none;
+
+}

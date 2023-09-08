@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.main-landing{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+.logo-title{
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    
+}
+
+#title-landing{
+    font-size: 60px;
+    padding: 10px;
+    margin: 10px;
+    opacity: 0;
+    animation: apearence 3s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+@keyframes apearence{
+    100%{
+        opacity: 1;
+    }
+}
+.tr{
+    color: #383CD6;
+}
+.av{
+    color: #EFC32D;
+}
+.el{
+    color: #D65185;
+}
+.grados{
+    color: #00BDD6;
+}
+
+.landing-cont{
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.enter{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    height: 10px;
+    background-color: #D65185;
+    border-radius: 20px;
+    color: white;
+    animation-duration: 2s;
+}
+
+.enter:hover{
+    box-shadow: 0 0 10px #d65185
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.main-form{
+    height: 85vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main-form h2{
+    font-family: 'Pacifico', cursive;
+    color: #19abd8f5;
+    font-size: 40px;
+}
+.form-cont{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 2px solid #DEDEDE;
+    border-radius: 20px;
+}
+
+.input{
+    width: 200px;
+    border: none;
+    border-bottom: 2px solid #DEDEDE;
+    background: transparent;
+}
+
+.error{
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+}
+.error span{
+    font-size: 16px;
+}
+.error#exist{
+    font-weight: bolder;
+    font-size: 16px;
+}
+.success{
+    color: green;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+.success span{
+    font-size: 16px;
+}
+.success#created{
+    font-weight: bolder;
+    font-size: 16px;
+}
+button{
+    width: 60px;
+}

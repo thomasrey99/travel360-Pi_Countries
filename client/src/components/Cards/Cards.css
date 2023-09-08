@@ -1,0 +1,18 @@
+.cards-cont{
+    width: 85%;
+    height: 110vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-evenly;
+    padding: 20px;
+    background: url("../../assets/img/O9FG4R0.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+.alerts{
+    color: black;
+    
+}

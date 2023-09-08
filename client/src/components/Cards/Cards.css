@@ -12,7 +12,8 @@
     background-position: center;
 
 }
-.alerts{
+.no-exist{
     color: black;
-    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }

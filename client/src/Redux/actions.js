@@ -93,15 +93,16 @@ export const order=(order)=>{
     }
 }
 export const search=(name)=>{
+    console.log(name)
     return async(dispatch)=>{
         try {
-            const response=(await axios(`http://localhost:3001?name=${name}`)).data
+            const response=(await axios(`http://localhost:3001/countries?name=${name}`)).data
             dispatch({
                 type:SEARCH,
                 payload:response
             })
         } catch (error) {
-            throw new error("error al buscar por name")
+            console.log(error)
         }
     }
 }

@@ -20,12 +20,12 @@ const getAllCountries=async(name)=>{
                 include:[
                     {
                         model:Activity,
-                        attributes:["id"]
+                        attributes:["id","name", "duration", "dificulty", "season"]
                     }
                 ]
             })
             if(!searchCountry.length){
-                return "no existen paises con ese nombre"
+                return []
             }
 
             return searchCountry
@@ -33,7 +33,7 @@ const getAllCountries=async(name)=>{
 
         return response
     } catch (error) {
-        throw new Error("error al enviar los paises")
+        throw new Error(error)
     }
 
 }

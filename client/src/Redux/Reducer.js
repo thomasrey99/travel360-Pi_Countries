@@ -151,6 +151,15 @@ const Reducer=(state=initialState, {type, payload})=>{
                 allCountries:countriesCopyPaginate.slice(payload*state.items, payload*state.items + state.items),
                 indexPage:payload
             }
+        case SEARCH:
+            const Pages=calculatePages(payload.length, state.items)
+            return{
+                ...state,
+                allCountries:[...payload].slice(0, state.items),
+                allCountriesStore:payload,
+                indexPage:0,
+                totalPages:Pages
+            }
         default:
             return {...state}
     }

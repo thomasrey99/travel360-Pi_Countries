@@ -41,6 +41,7 @@ const Reducer=(state=initialState, {type, payload})=>{
                 allCountries:payload.slice(0, lastIndex),
                 allCountriesBackup:payload,
                 allCountriesStore:payload,
+                indexPage:0,
                 totalPages:pages
             }
         case GET_ACTIVITIES:

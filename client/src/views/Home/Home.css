@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .main-home{
+    margin: 80px 0 80px 0 ;
     height: auto;
     width: 100%;
     display: flex;
@@ -21,7 +22,7 @@
 }
 .home-title{
     font-size: 40px;
-    color: #8C969C;
+    color: #699EBF;
     font-family: 'Pacifico', cursive;
     padding: 10px;
     

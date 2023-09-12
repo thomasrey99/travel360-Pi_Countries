@@ -11,7 +11,7 @@
     width: 100%;
     max-width: 400px;
     background: white;
-    border:  1px solid #dedede;
+    border:  1px solid #699EBF;
     display: flex;
     align-items: center;
     border-radius: 60px;
@@ -24,11 +24,11 @@
     border:0;
     outline:none;
     font-size:20px;
-    color: #8C969C;
+    color: #699EBF;
     font-family: 'Montserrat', sans-serif;
 }
 ::placeholder{
-    color: #8C969C;
+    color: #7B95A6;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -40,7 +40,7 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #8C969C;
+    background-color: #699EBF;
     cursor: pointer;
 
 }

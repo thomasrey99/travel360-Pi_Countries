@@ -1,0 +1,22 @@
+.footer{
+    width: 99.4vw;
+    height: 30vh;
+    background: #699EBF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.redes-cont{
+    width: 25%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer p{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}

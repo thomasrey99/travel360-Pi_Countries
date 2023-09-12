@@ -25,8 +25,8 @@
     font-family: 'Nunito Sans', sans-serif;
     text-align: center;
     font-weight: bolder;
-    color: black;
-    border: 1px solid #dedede;
+    color: #7B95A6;
+    border: 1px solid #699EBF;
     cursor: pointer;
 }
 .select-cont{
@@ -42,8 +42,8 @@
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bolder;
     background: white;
-    color: black;
-    border:1px solid #dedede;
+    color: #7B95A6;
+    border:1px solid #699EBF;
     text-align: center;
 }
 .select-cont select::-ms-expand{

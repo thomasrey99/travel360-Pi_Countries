@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .paginate{
-    list-style: none;
-    display:flex ;
-    padding: 20px;
+    width: 15vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.paginate li{
+.paginate button{
     margin: 10px;
     cursor: pointer;
-    width: 20px;
-    color: black;
+    width: 40px;
+    color: white;
+    background: #699EBF;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
 
-.page{
-    border-bottom:1px solid black;
+.paginate p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    color: #176596;
+    text-align: center;
 }

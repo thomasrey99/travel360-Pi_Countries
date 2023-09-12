@@ -6,29 +6,30 @@ const Paginate=()=>{
 const dispatch=useDispatch()
 const position=useSelector((state)=>state.indexPage)
 const pages=useSelector((state)=>state.totalPages)
-const [index, setIndex]=useState([])
-const totalPages=()=>{
-    const index_Pages=[]
-    for(let i=0;i<pages;i++){
-        index_Pages.push(i)
+
+let currentPage=position
+
+const updateIndex=(event)=>{
+    if(event.target.value==="<" && currentPage>0){
+        currentPage=currentPage - 1
+        dispatch(paginate(currentPage))
+        return true
+    }else if(event.target.value===">" && currentPage<pages - 1){
+        currentPage= currentPage + 1
+        dispatch(paginate(currentPage))
+        return true
     }
-    setIndex(index_Pages)
 }
-useEffect(()=>{
-    totalPages()
-}, [pages])
+console.log(pages)
 
 return(
-    <ul className="paginate">
-        {
-            index.map((index_page)=>{
-                return(
-                    
-                    <li value={index_page} key={index_page} onClick={()=>dispatch(paginate(index_page))} className={index_page===position ? "page": ""}>{index_page + 1}</li>
-                )
-            })
-        }
-    </ul>
+    <div className="paginate">
+        <button value={"<"} onClick={updateIndex}>{"<"}</button>
+        <div className="index">
+            <p>{currentPage + 1}</p>
+        </div>
+        <button value={">"} onClick={updateIndex}>{">"}</button>
+    </div>
 )
 }
 

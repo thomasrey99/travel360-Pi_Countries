@@ -1,13 +1,13 @@
 import {
     GET_COUNTRIES,
-    CLEAR,
     ORDER,
     FILTER,
     SEARCH,
     PAGINATE,
     GET_ACTIVITIES,
     GET_BY_ID_COUNTRY,
-    POST_ACTIVITY_MESSAGE} from "./Action-Types"
+    POST_ACTIVITY_MESSAGE,
+    CLEAR} from "./Action-Types"
 
 let initialState = {
     allCountries: [],
@@ -42,7 +42,8 @@ const Reducer=(state=initialState, {type, payload})=>{
                 allCountriesBackup:payload,
                 allCountriesStore:payload,
                 indexPage:0,
-                totalPages:pages
+                totalPages:pages,
+                message:""
             }
         case GET_ACTIVITIES:
             return{
@@ -160,6 +161,15 @@ const Reducer=(state=initialState, {type, payload})=>{
                 allCountriesStore:payload,
                 indexPage:0,
                 totalPages:Pages
+            }
+        case CLEAR:
+            const pagesClear=calculatePages(state.allCountriesBackup.length, state.items)
+            return{
+                ...state,
+                allCountries:[...state.allCountriesBackup].slice(0, state.items),
+                allCountriesStore:[...state.allCountriesBackup],
+                indexPage:0,
+                totalPages:pagesClear
             }
         default:
             return {...state}

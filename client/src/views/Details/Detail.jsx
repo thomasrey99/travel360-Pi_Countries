@@ -1,8 +1,7 @@
 import "./Detail.css"
-import Activities from "../../components/Activities/Activities"
+import CardActivities from "../../components/ActivitiesCard/CardActivities"
 import {getByIdCountry} from "../../Redux/actions"
 import {useDispatch, useSelector} from "react-redux"
-import CardDetail from "../../components/CardDetail/CardDetail"
 import { useEffect } from "react"
 import {useParams, NavLink} from "react-router-dom"
  const Details=()=>{
@@ -13,18 +12,22 @@ import {useParams, NavLink} from "react-router-dom"
     useEffect(()=>{
         dispatch(getByIdCountry(id))
     }, [])
-    console.log(detail)
+
     return (
         <main className="main-detail">
-            <NavLink to={"/home"} className="link-back"><span className="material-symbols-outlined" id="back-icon">arrow_back</span>Volver</NavLink>
-            <CardDetail detail={detail}/>
-            {
-                !detail.Activities
-                ?
-                <p>No existen actividades relacionadas a este pais</p>
-                :
-                <Activities activities={detail.Activities}/>
-            }
+            <div className="country-info">
+                <div className="info-card">
+                    <img src={detail.flag}/>
+                    <h2>{detail.name}</h2>
+                    <p>{detail.id}</p>
+                    <p><span className="description">Continente:</span> {detail.continent}</p>
+                    <p><span className="description">Subregion</span>: {detail.subregion ==="undefined"?"No posee":detail.subregion}</p>
+                    <p><span className="description">Capital</span>: {detail.capital}</p>
+                    <p><span className="description">Poblacion:</span> {detail.population}</p>
+                    <p><span className="description">Area:</span> {detail.area} Km/2</p>
+                    <NavLink to={`/activities/${id}`} className="activities-button">Actividades</NavLink>
+                </div>
+            </div>
         </main>
     )
 }

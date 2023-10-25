@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar/Navbar"
 import Home from "./views/Home/Home"
 import FormActivity from "./views/FormActivity/FormActivity"
 import Details from "./views/Details/Detail"
+import About from './views/About/About'
+import Activities from './views/Activities/Activities'
 import './App.css'
 
 
@@ -26,6 +28,8 @@ function App () {
         <Route path={"/home"} Component={Home}/>
         <Route path={"/details/:id"} Component={Details}/>
         <Route path={"/createActivity"} Component={FormActivity}/>
+        <Route path={"/activities/:id"} Component={Activities}/>
+        <Route path={"/about"} Component={About}/>
       </Routes>
     </div>
   )

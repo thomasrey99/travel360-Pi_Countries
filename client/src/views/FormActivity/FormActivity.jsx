@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import {useSelector, useDispatch} from "react-redux"
-import {useNavigate} from "react-router-dom"
 import Footer from "../../components/Footer/Footer"
 import { postActivity } from "../../Redux/actions"
 import validations from "./validations"
@@ -16,9 +15,6 @@ const FormActivity=()=>{
     dificulty: null,
     idCountries: [],
   });
-  const [flags, setFlags]=useState([])
-
-  const [dataCreated, setDataCreated]=useState({})
 
   const [errors, setErrors] = useState({});
 
@@ -33,7 +29,6 @@ const FormActivity=()=>{
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setDataCreated(data)
     dispatch(postActivity(data));
     setData({
       name: "",
@@ -65,51 +60,16 @@ const FormActivity=()=>{
       
     }
   };
-  const close=()=>{
-    setDataCreated({})
-  }
 
-  const addFlag=()=>{
-    countries.forEach(({id, flag})=>{
-      if(data.idCountries.includes(id)){
-        setFlags([...flags, flag])
-      }
-    })
-  }
   useEffect(() => {
     const validationErrors = validations(data);
     setErrors(validationErrors);
   }, [data]);
 
-  useEffect(()=>{
-    addFlag()
-  },[data.idCountries])
-    console.log("banderas", flags)
     return (
         <>
+          <h2 className="title-make">Crear actividad</h2>
           <main className="main-form">
-              <div className="section-left">
-                <h2 className="title-make">Crear actividad</h2>
-                {
-                  Object.keys(dataCreated).length!==0
-                  ?
-                  <div className="alert">
-                    <h3>
-                      {message ==="Actividad creada con exito" ?(<span className="succes">{message}! <span class="material-symbols-outlined">check_circle</span></span>): message==="La actividad ya existe" ? (<span className="exist">{message}! <span class="material-symbols-outlined">cancel</span></span>):""}
-                    </h3>
-                    <p>Actividad: {dataCreated.name}</p>
-                    <p>Temporada: {dataCreated.season}</p>
-                    <p>Duracion: {dataCreated.duration} hs</p>
-                    <p>Dificultad: {
-                      dataCreated.dificulty==="1"?"Facil" : dataCreated.dificulty==="2"?"Moderado":dataCreated.dificulty==="3"?"Intermedio":dataCreated.dificulty==="4"?"Avanzado":dataCreated.dificulty==="5"?"Extremo":""
-                    }</p>
-                    <div className="close" onClick={close}><span>x</span></div>
-                  </div>
-                  :
-                  ""
-                }
-              </div>
-              <div className="principal-cont">
                 <form className="form-cont" onSubmit={handleSubmit}>
                     <label htmlFor="name" className="label-desc">Actividad</label>
                     <input name="name" className="input" value={data.name} onChange={handleChange}/>
@@ -184,22 +144,16 @@ const FormActivity=()=>{
                     }
                     <button type="submit" disabled={Object.keys(errors).length!==0} id={Object.keys(errors).length!==0 ? "disabled": ""}>Crear</button>
                 </form>
-                <div className="flags-cont">
-                    {
-                      flags
-                      ?
-                      flags.map((flag)=>{
-                        return (
-                          <div>
-                            <img src={flag}/>
-                          </div>
-                        )
-                      })
-                      :
-                      ""
-                    }
-                </div>
-              </div>
+                {
+                  message==="Actividad creada con exito"
+                  ?
+                  <h3 className="succes">Actividad creada con exito</h3>
+                  :
+                  message==="La actividad ya existe"
+                  ?
+                  <h3 className="exist">La actividad ya existe</h3>
+                  :""
+                }
           </main>
           <Footer/>
         </>

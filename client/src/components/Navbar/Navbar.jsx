@@ -10,7 +10,8 @@ const Navbar=()=>{
             </div>
             <div className="div-links">
                 {pathname==="/home"?<NavLink to={"/home"} className="link" id="active">Inicio</NavLink>:<NavLink to={"/home"} className="link">Inicio</NavLink>}
-                {pathname==="/createActivity"?<NavLink to={"/createActivity"} className="link" id="active">crear actividad</NavLink>:<NavLink to={"/createActivity"} className="link">crear actividad</NavLink>}
+                {pathname==="/About"?<NavLink to={"/About"} className="link" id="active">About</NavLink>:<NavLink to={"/About"} className="link">About</NavLink>}
+                {pathname==="/createActivity"?<NavLink to={"/createActivity"} className="link" id="active">Crear actividad</NavLink>:<NavLink to={"/createActivity"} className="link">Crear actividad</NavLink>}
             </div>
         </header>
     )

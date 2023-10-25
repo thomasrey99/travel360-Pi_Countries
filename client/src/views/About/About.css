@@ -1,0 +1,35 @@
+.main-about{
+    height: 85vh;
+    width: 99.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background: #699EBF;
+}
+.main-about h2{
+    font-size: 45px;
+    margin: 40px 0 40px 0;
+    opacity: 0;
+    animation: apearence 2s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+.text-div{
+    width: 80%;
+    opacity: 0;
+    animation: apearence 2s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+.text-div p{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0 10px 0;
+    color: white;
+}
+
+.paragraph{
+    font-weight: bold;
+    color: black !important;
+}

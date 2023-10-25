@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { filter, order, getAllCountries } from "../../Redux/actions";
+import { filter, order, clear } from "../../Redux/actions";
 import { useDispatch } from "react-redux";
 import "./Filter-Order.css";
 
@@ -13,10 +13,10 @@ const FilterOrder = ({ activities }) => {
   const [selectedOrder, setSelectedOrder] = useState("Order"); // Estado para el valor seleccionado en "order"
 
   const handleClear = () => {
-    dispatch(getAllCountries());
+    dispatch(clear());
     setSelectedOrder("Order"); 
-    setActivity("Actividad")
-    setContinent("Continente")
+    setActivity("")
+    setContinent("")
   };
 
   const handleChangeContinent = (event) => {

@@ -1,5 +1,5 @@
 .cards-cont{
-    width: 85%;
+    width: 95%;
     height: 110vh;
     display: flex;
     flex-direction: row;
@@ -7,8 +7,8 @@
     align-items: center;
     justify-content:space-evenly;
     padding: 20px;
-    background: url("../../assets/img/12.jpg");
-    background-size: cover;
+    background: url("../../assets/img/world.png");
+    background-size: contain;
     background-position: center;
 
 }
